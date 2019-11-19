@@ -105,3 +105,6 @@ venv.bak/
 
 # pycharm
 /.idea
+
+# compiled requirements
+app/requirements.txt
