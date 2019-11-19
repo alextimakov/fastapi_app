@@ -1,7 +1,9 @@
-FROM tiangolo/uvicorn-gunicorn:python3.7
+FROM python:3.7
 
-RUN pip install pip-tools
+RUN pip install fastapi uvicorn
 
-RUN pip-compile requirements.in > requirements.txt && pip-sync
+EXPOSE 8080
 
 COPY ./app /app
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
